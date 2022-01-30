@@ -43,7 +43,7 @@ body{
 
 .small-txt{
     color:var(--paleblue);
-    margin-bottom: 0.70rem;
+    margin-bottom: 0.40rem;
     font-size: 15px;
 }
 
@@ -70,13 +70,27 @@ body{
 }
 
 .card__profile--img{
-    width: 5.2rem;
+    width: 5rem;
     border-style: solid;
     border-width: 0.20rem;
-    border-color: white;
+    border-color: var(--fontcolor);
     border-radius: 100px;
     margin-bottom: 2.5rem;
-    line-height: 3rem;
+    
+}
+
+.card__profile--select{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 1.7em;
+    margin-top: 0.9rem;
+    margin-bottom: 0.9rem;
+    color: var(--blue);
+    font-size: 18px;
+    height: 8.3rem;
+    max-height: 8.3rem
+   
 }
 
 
