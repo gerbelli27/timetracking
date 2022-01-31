@@ -29,11 +29,12 @@
 }
 
 body{
-    
     background-color: var(--verydarkblue);
     font-family: var(--fontbody);
     font-size: var(--fontsize);
     color: var(--fontcolor);
+    width: auto;
+    height: auto;
 }
 
 .title{
@@ -44,6 +45,10 @@ body{
 .title-card{
     font-weight: var(--weight5);
     font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
 }
 
 .title-data{
@@ -58,19 +63,31 @@ body{
 }
 
 .cards{
-    width: 100vh;
-    display: flex;
-    justify-content: space-around;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
     align-items: center;
-    margin: 10%;
+    display: flex; 
+}
+
+.cards--itens{
+    justify-content: left;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    height: 500px;
+    width: 817px;
 }
 
 .card__profile{
     box-sizing: border-box;
     background-color: var(--darkblue);
     min-height: 32.2rem;
+    max-height: 32.2rem;
     border-radius: 15px;
     width: 16rem;
+    min-width: 16rem;
+    margin-right: 1.5rem;
 }
 
 .card__profile--user{
@@ -113,13 +130,12 @@ body{
     align-items: flex-end;
     left: 300px;
     box-sizing: border-box;
-    
     background-position: 10rem -0.6rem;
     background-repeat: no-repeat;
     min-height: 15.2rem;
     max-height: 13rem;
     border-radius: 15px;
-    width: 16rem;
+    width: 16rem;   
 }
 
 .card__data p{
@@ -127,8 +143,7 @@ body{
 }
 
 .card__data i::before{
-    content: url(./images/icon-ellipsis.svg);
-    
+  content: url(./images/icon-ellipsis.svg);   
 }
 
 .card__data{
