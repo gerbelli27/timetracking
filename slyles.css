@@ -39,7 +39,7 @@ body{
 
 .title{
     font-weight: var(--weight3);
-    font-size: 2.3rem;
+    font-size: 1.5rem;
 }
 
 .title p {
@@ -53,12 +53,12 @@ body{
     font-size: 1.3rem;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    margin-bottom: 0.1rem;
 }
 
 .title-data{
     font-weight: var(--weight3);
-    font-size: 3.7rem;
+    font-size: 2.7rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -82,17 +82,17 @@ body{
 .cards{
     position: relative;
 
-    top: 1rem;
-    left: .2rem;
+    top: 3rem;
+    left: 0;
     height: 100%;
     width: 100%;
     justify-content: auto;
     align-items: auto;
     display: flex;
     flex-direction: column;
-    gap: 1.75rem;
+    gap: 1.70rem;
     align-items: center;
-    margin-bottom: 1rem;
+    padding-bottom: 3rem;
 }
 
 .cards--itens{
@@ -106,7 +106,7 @@ body{
 .card__profile{
     box-sizing: border-box;
     background-color: var(--darkblue);
-    height: 16rem;
+    height: 12rem;
     border-radius: 15px;
     width: 90%;
     min-width: 16rem;
@@ -114,18 +114,18 @@ body{
 
 .card__profile--user{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items:center;
     box-sizing: border-box;
     background-color: var(--blue);
     border-radius: 15px;
-    min-height: 10rem;
+    min-height: 8rem;
     padding: 1rem;
     
 }
 
 .card__profile--img{
-    width: 5rem;
+    width: 4.5rem;
     border-style: solid;
     border-width: 0.20rem;
     border-color: var(--fontcolor);
@@ -133,18 +133,18 @@ body{
 }
 
 .card__profile--select{
+    height: 4rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 2.5rem;
 }
 
 .card{
     display:flex;
     align-items: flex-end;
     background-repeat: no-repeat;
-    background-position: top right;
-    min-height: 13.5rem;
+    background-position: left 94% bottom 110%;;
+    min-height: 10.7rem;
     max-height: 20rem;
     border-radius: 17px;
     min-width: 16rem; 
@@ -162,7 +162,7 @@ body{
     box-sizing: border-box;
     background-color: var(--darkblue);
     border-radius: 15px;
-    min-height: 10.35rem;
+    height: 8.2rem;
     width: 100%;
     padding-left: 1.7rem;
     padding-top: 1rem;  
@@ -275,6 +275,10 @@ body{
     .title-data{
         font-weight: var(--weight3);
         font-size: 3.7rem;
+    }
+
+    .title{
+        font-size: 2.3rem;
     }
 
     .card__profile--img{
