@@ -3,6 +3,7 @@
    /* Primary*/
 
    --blue: hsl(246, 80%, 60%);
+   --bluehover: #303782;
    
     --redwork: hsl(15, 100%, 70%);
     --blueplay: hsl(195, 74%, 62%);
@@ -76,6 +77,10 @@ body{
     color: var(--paleblue);
 }
 .links:hover{
+    color: var(--fontcolor);
+}
+
+.active{
     color: var(--fontcolor);
 }
 
@@ -171,7 +176,7 @@ body{
 }
 
 .card__data:hover{
-    background-color: var(--desaturedblue);
+    background-color: var(--bluehover);
     cursor: pointer;
 }
 
