@@ -1,3 +1,7 @@
+const day = document.querySelector(".daily");
+const weekly = document.querySelector(".weekly");
+const monthly = document.querySelector(".monthly");
+
 function loadJSON(callback) {
 
   var xobj = new XMLHttpRequest();
@@ -15,18 +19,73 @@ function loadJSON(callback) {
   
   }
   
-  // Call to function with anonymous callback
   loadJSON(function(response) {
-  // Do Something with the response e.g.
   jsonresponse = JSON.parse(response);
-  
+ 
+  for (let i = 0; i < jsonresponse.length; i++) {
+    title = jsonresponse[i].title.replace(/\s/g, '').toLowerCase();
+    hours = jsonresponse[i].timeframes.daily.current;
+    previous = jsonresponse[i].timeframes.daily.previous;
+    markup = `${hours}hrs<br><span class="small-txt" id="txt-work">Last Week - ${previous}hrs</span>`;
+    document.querySelector(`#${title}`).innerHTML = markup;
+    
+  }
 
-  console.log(jsonresponse);
+ day.addEventListener("click",function() {
   
-  });
+  for (let i = 0; i < jsonresponse.length; i++) {
+      title = jsonresponse[i].title.replace(/\s/g, '').toLowerCase();
+      hours = jsonresponse[i].timeframes.daily.current;
+      previous = jsonresponse[i].timeframes.daily.previous;
+      markup = `${hours}hrs<br><span class="small-txt" id="txt-work">Last Week - ${previous}hrs</span>`;
+      document.querySelector(`#${title}`).innerHTML = markup;
+      document.querySelector('.daily').classList.add = ("active");
+    }
+  
+  })
+
+  weekly.addEventListener("click", function() {
+  
+    for (let i = 0; i < jsonresponse.length; i++) {
+        title = jsonresponse[i].title.replace(/\s/g, '').toLowerCase();
+        hours = jsonresponse[i].timeframes.weekly.current;
+        previous = jsonresponse[i].timeframes.weekly.previous;
+        markup = `${hours}hrs<br><span class="small-txt" id="txt-work">Last Week - ${previous}hrs</span>`;
+        document.querySelector(`#${title}`).innerHTML = markup;
+      }
+    
+    })
+
+    monthly.addEventListener("click", function() {
+  
+      for (let i = 0; i < jsonresponse.length; i++) {
+          title = jsonresponse[i].title.replace(/\s/g, '').toLowerCase();
+          hours = jsonresponse[i].timeframes.monthly.current;
+          previous = jsonresponse[i].timeframes.monthly.previous;
+          markup = `${hours}hrs<br><span class="small-txt" id="txt-work">Last Week - ${previous}hrs</span>`;
+          document.querySelector(`#${title}`).innerHTML = markup;
+        }
+      
+      })
+
+console.log(jsonresponse)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+);
 
 
   
-  const buttonDaily = document.getElementById('daily');
-  const buttonWekkly = document.getElementById('weekly');
-  const buttonMonthly = document.getElementById('monthly');
