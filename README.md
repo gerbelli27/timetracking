@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](/Screenshot 2022-02-04 at 09-51-10 Frontend Mentor Time tracking dashboard.png)
+![](Screenshot.png)
 
 
 ### Links
