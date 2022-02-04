@@ -1,7 +1,7 @@
-const daily = document.querySelector(".daily");
-const weekly = document.querySelector(".weekly");
-const monthly = document.querySelector(".monthly");
-const active = ("active")
+const daily = document.getElementById("daily");
+const weekly = document.getElementById("weekly");
+const monthly = document.getElementById("monthly");
+
 
 function loadJSON(callback) {
 
@@ -27,8 +27,9 @@ function loadJSON(callback) {
     title = jsonresponse[i].title.replace(/\s/g, '').toLowerCase();
     hours = jsonresponse[i].timeframes.daily.current;
     previous = jsonresponse[i].timeframes.daily.previous;
-    markup = `${hours}hrs<br><span class="small-txt" id="txt-work">Last Week - ${previous}hrs</span>`;
+    markup = `${hours}hrs<br><span class="small-txt" id="txt-work">Yesterday - ${previous}hrs</span>`;
     document.querySelector(`#${title}`).innerHTML = markup;
+    daily.classList.add("active")
   }
 
  daily.addEventListener("click",function() {
@@ -37,11 +38,12 @@ function loadJSON(callback) {
       title = jsonresponse[i].title.replace(/\s/g, '').toLowerCase();
       hours = jsonresponse[i].timeframes.daily.current;
       previous = jsonresponse[i].timeframes.daily.previous;
-      markup = `${hours}hrs<br><span class="small-txt" id="txt-work">Last Week - ${previous}hrs</span>`;
+      markup = `${hours}hrs<br><span class="small-txt" id="txt-work">Yesterday - ${previous}hrs</span>`;
       document.querySelector(`#${title}`).innerHTML = markup;
-      
-      
     }
+      daily.classList.add("active")
+      weekly.classList.remove("active")
+      monthly.classList.remove("active")
   })
 
   weekly.addEventListener("click", function() {
@@ -53,7 +55,9 @@ function loadJSON(callback) {
         markup = `${hours}hrs<br><span class="small-txt" id="txt-work">Last Week - ${previous}hrs</span>`;
         document.querySelector(`#${title}`).innerHTML = markup;
       }
-    
+      weekly.classList.add("active")
+      daily.classList.remove("active")
+      monthly.classList.remove("active")
     })
 
     monthly.addEventListener("click", function() {
@@ -62,10 +66,12 @@ function loadJSON(callback) {
           title = jsonresponse[i].title.replace(/\s/g, '').toLowerCase();
           hours = jsonresponse[i].timeframes.monthly.current;
           previous = jsonresponse[i].timeframes.monthly.previous;
-          markup = `${hours}hrs<br><span class="small-txt" id="txt-work">Last Week - ${previous}hrs</span>`;
+          markup = `${hours}hrs<br><span class="small-txt" id="txt-work">Last Month - ${previous}hrs</span>`;
           document.querySelector(`#${title}`).innerHTML = markup;
         }
-      
+        monthly.classList.add("active")
+        daily.classList.remove("active")
+        weekly.classList.remove("active")
       })
 }
 
