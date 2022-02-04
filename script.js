@@ -27,7 +27,7 @@ function loadJSON(callback) {
     title = jsonresponse[i].title.replace(/\s/g, '').toLowerCase();
     hours = jsonresponse[i].timeframes.daily.current;
     previous = jsonresponse[i].timeframes.daily.previous;
-    markup = `${hours}hrs<br><span class="small-txt" id="txt-work">Yesterday - ${previous}hrs</span>`;
+    markup = `${hours}hrs<br><span class="small-txt">Yesterday - ${previous}hrs</span>`;
     document.querySelector(`#${title}`).innerHTML = markup;
     daily.classList.add("active")
   }
