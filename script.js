@@ -1,6 +1,7 @@
-const day = document.querySelector(".daily");
+const daily = document.querySelector(".daily");
 const weekly = document.querySelector(".weekly");
 const monthly = document.querySelector(".monthly");
+const active = ("active")
 
 function loadJSON(callback) {
 
@@ -28,10 +29,9 @@ function loadJSON(callback) {
     previous = jsonresponse[i].timeframes.daily.previous;
     markup = `${hours}hrs<br><span class="small-txt" id="txt-work">Last Week - ${previous}hrs</span>`;
     document.querySelector(`#${title}`).innerHTML = markup;
-    
   }
 
- day.addEventListener("click",function() {
+ daily.addEventListener("click",function() {
   
   for (let i = 0; i < jsonresponse.length; i++) {
       title = jsonresponse[i].title.replace(/\s/g, '').toLowerCase();
@@ -39,9 +39,9 @@ function loadJSON(callback) {
       previous = jsonresponse[i].timeframes.daily.previous;
       markup = `${hours}hrs<br><span class="small-txt" id="txt-work">Last Week - ${previous}hrs</span>`;
       document.querySelector(`#${title}`).innerHTML = markup;
-      document.querySelector('.daily').classList.add = ("active");
+      
+      
     }
-  
   })
 
   weekly.addEventListener("click", function() {
@@ -67,22 +67,6 @@ function loadJSON(callback) {
         }
       
       })
-
-console.log(jsonresponse)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 );
